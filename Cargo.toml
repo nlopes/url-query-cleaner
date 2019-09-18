@@ -1,0 +1,19 @@
+[package]
+name = "url-query-cleaner"
+version = "0.1.0"
+authors = ["Norberto Lopes <nlopes.ml@gmail.com>"]
+edition = "2018"
+description = "Rust library to provide facilities to clean up url query parameters"
+documentation = "https://docs.rs/url-query-cleaner"
+repository = "https://github.com/nlopes/url-query-cleaner.git"
+license = "MIT"
+readme = "README.md"
+keywords = ["http", "macro", "url", "query", "cleaner", "params"]
+categories = ["web-programming"]
+exclude = [".gitignore", ".travis.yml"]
+
+[badges]
+travis-ci = { repository = "nlopes/url-query-cleaner", branch = "master" }
+
+[dependencies]
+url = "=2.1.0"
