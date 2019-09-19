@@ -8,7 +8,7 @@ documentation = "https://docs.rs/url-query-cleaner"
 repository = "https://github.com/nlopes/url-query-cleaner.git"
 license = "MIT"
 readme = "README.md"
-keywords = ["http", "macro", "url", "query", "cleaner", "params"]
+keywords = ["http", "url", "query", "cleaner", "params"]
 categories = ["web-programming"]
 exclude = [".gitignore", ".travis.yml"]
 

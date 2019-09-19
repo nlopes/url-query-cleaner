@@ -19,19 +19,19 @@ Rust library to provide facilities to clean up url query parameters.
 
 ### Basic
 
-Use one of the macros to clean up your url query parameters.
+Use the simpler function `untrack` to clean up your url query parameters.
 
 ```rust
-use url_query_cleaner::AllowedMarketingTracking;
+use url_query_cleaner::AllowedTracking;
 
 fn main() {
     // By default, no tracking is allowed, meaning the `utm_content` query param below
     // will be removed.
-    let opts: AllowedMarketingTracking = Default::default();
+    let opts: AllowedTracking = Default::default();
     let url = "https://www.example.com/?utm_content=buffercf3b2&name=ferret";
 
     assert_eq!(
-        url_query_cleaner::untrack!(url, opts).unwrap(),
+        url_query_cleaner::untrack(url, opts).unwrap(),
         "https://www.example.com/?name=ferret",
     );
 }
@@ -40,11 +40,11 @@ fn main() {
 ### Advanced
 
 The advanced use case (not thaaat advanced) is for people that can't do what they need
-through the provided macros.
+through the provided function `untrack`.
 
 ```rust
 
-use url_query_cleaner::query_filter;
+use url_query_cleaner::clean;
 
 fn main() {
     let url = "https://www.example.com/?&name=ferret&troop=12&item=vase";
@@ -52,10 +52,7 @@ fn main() {
     filters.push("name");
     filters.push("troop");
 
-    assert_eq!(
-        query_filter(url, filters).unwrap(),
-        "https://www.example.com/?item=vase",
-    );
+    assert_eq!(clean(url, filters).unwrap(), "https://www.example.com/?item=vase");
 }
 ```
 
