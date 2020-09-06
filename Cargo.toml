@@ -16,4 +16,4 @@ exclude = [".gitignore", ".travis.yml"]
 travis-ci = { repository = "nlopes/url-query-cleaner", branch = "master" }
 
 [dependencies]
-url = "=2.1.0"
+url = "2.1"
